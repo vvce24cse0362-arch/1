@@ -1,0 +1,51 @@
+
+# STEP 1: Check Git
+git --version
+
+# STEP 2: Configure Git
+git config --global user.name "Dayasagar"
+git config --global user.email "your-email@gmail.com"
+
+# STEP 3: Initialize repository
+git init
+git branch -M master
+
+# STEP 4: Check status
+git status
+
+# STEP 5: Create README.txt in VS Code
+
+# STEP 6: Add and commit
+git add .
+git commit -m "v1"
+
+# STEP 7: Create B1 branch
+git branch b1
+
+# STEP 8: Switch to B1
+git switch b1
+
+# STEP 9: Modify README.txt with B1 content
+git add .
+git commit -m "v2"
+
+# STEP 10: Switch to master
+git switch master
+
+# STEP 11: Modify README.txt with MASTER content
+git add .
+git commit -m "master changed"
+
+# STEP 12: Merge B1
+git merge b1
+
+# STEP 13: Manually resolve README.txt
+
+# STEP 14: Complete merge
+git add .
+git commit -m "Merge conflict resolved"
+
+# STEP 15: Verify
+git status
+git branch
+git log --oneline --graph --all

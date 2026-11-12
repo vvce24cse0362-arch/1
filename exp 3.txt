@@ -1,0 +1,46 @@
+in vs code 
+create index.html
+dockerfile
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Docker Experiment</title>
+</head>
+<body>
+    <h1>Welcome to Docker</h1>
+    <p>This website is running inside a Docker container.</p>
+</body>
+</html>
+
+
+docker 
+
+FROM httpd:latest
+
+COPY index.html /usr/local/apache2/htdocs/
+
+EXPOSE 80
+
+
+docker build -t mywebsite .
+
+docker images
+
+REPOSITORY    TAG       IMAGE ID
+mywebsite     latest    xxxxx
+
+docker run -d --name mycontainer -p 8081:80 mywebsite
+
+docker ps 
+
+CONTAINER ID    IMAGE       PORTS
+xxxxxxxx        mywebsite   0.0.0.0:8081->80/tcp  
+
+docker login
+
+sagar05123 
+
+docker tag mywebsite:latest sagar05123/mywebsite:v1
+docker push sagar05123/mywebsite:v1
+docker pull sagar05123/mywebsite:v1
